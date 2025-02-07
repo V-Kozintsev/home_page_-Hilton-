@@ -1,4 +1,4 @@
 //index.jsx
-import "./main.css";
+import "./style.css";
 
 console.log("Hello,Hampton!");

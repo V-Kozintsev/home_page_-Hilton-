@@ -1,20 +1,14 @@
-import path from "path";
-import { fileURLToPath } from "url";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const path = require("path");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export default {
+module.exports = {
   mode: "production",
   entry: "./src/index.js",
   output: {
+    path: path.resolve(__dirname, "./dist"),
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-    publicPath: "./", // Важно: Настройка для GitHub Pages
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -22,6 +16,7 @@ export default {
       template: "./public/index.html",
       filename: "index.html",
     }),
+
     new MiniCssExtractPlugin({
       filename: "./css/style.css",
       chunkFilename: "[id].css",
@@ -30,21 +25,30 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: {},
+          },
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
         },
       },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
     ],
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "dist"),
     },
     compress: true,
     port: 9000,
@@ -53,8 +57,5 @@ export default {
     client: {
       overlay: true,
     },
-  },
-  resolve: {
-    extensions: [".js", ".jsx", ".css"],
   },
 };
