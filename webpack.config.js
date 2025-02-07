@@ -1,20 +1,30 @@
-const path = require("path");
+import path from "path";
+import { fileURLToPath } from "url";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-module.exports = {
+export default {
+  mode: "production",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    clean: true, // Очищает output папку перед новым сборкой
+    clean: true,
+    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      template: "./public/index.html",
       filename: "index.html",
-      template: "public/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "./css/style.css",
+      chunkFilename: "[id].css",
     }),
   ],
   externalsType: "script",
@@ -28,18 +38,23 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/, // Исключить папку node_modules
+        exclude: /node_modules/,
         use: {
-          loader: "babel-loader", // Используем babel-loader для обработки JS
+          loader: "babel-loader",
         },
       },
       {
-        test: /\.css$/, // Регулярное выражение для нахождения файлов .css
-        use: ["style-loader", "css-loader"],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/, // Для обработки изображений и шрифтов
-        type: "asset/resource", // Webpack 5 использует asset module
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024,
+          },
+        },
       },
     ],
   },
@@ -47,11 +62,15 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "public"),
     },
-    compress: true, // Включает сжатие
-    port: 9000, // Порт для dev server
-    open: true, // Автоматически открывает браузер
+    compress: true,
+    port: 9000,
+    hot: true,
+    open: true,
+    client: {
+      overlay: true,
+    },
   },
   resolve: {
-    extensions: [".js", ".jsx", ".css"], // Автоматическое добавление расширений
+    extensions: [".js", ".jsx", ".css"],
   },
 };
