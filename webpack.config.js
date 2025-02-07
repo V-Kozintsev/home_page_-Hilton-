@@ -15,6 +15,7 @@ export default {
     path: path.resolve(__dirname, "dist"),
     clean: true,
     assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
+    publicPath: "./", // Важно:  Настройка для GitHub Pages
   },
   plugins: [
     new CleanWebpackPlugin(),
