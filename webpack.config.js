@@ -14,8 +14,7 @@ export default {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
-    publicPath: "./", // Важно:  Настройка для GitHub Pages
+    publicPath: "./", // Важно: Настройка для GitHub Pages
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -28,13 +27,6 @@ export default {
       chunkFilename: "[id].css",
     }),
   ],
-  externalsType: "script",
-  externals: {
-    ymaps3: [
-      "https://api-maps.yandex.ru/v3/?apikey=b053285a-f157-45bf-9726-cec55b7deb89&lang=ru_RU",
-      "ymaps3",
-    ],
-  },
   module: {
     rules: [
       {
@@ -47,15 +39,6 @@ export default {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        type: "asset",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024,
-          },
-        },
       },
     ],
   },
