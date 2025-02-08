@@ -1,9 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hampton Volgograd</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container">
@@ -11,13 +18,19 @@
         <div class="header-wrapper">
           <div class="header-top">
             <div class="logo">
-              <img src="../src/images/logo.png" alt="Hampton by Hilton Logo" />
+              <a href="/">
+                <img
+                  src="../src/images/logo.png"
+                  alt="Hampton by Hilton Logo"
+                />
+              </a>
             </div>
             <div class="time-weather">
               <span class="time">МЕСТНОЕ ВРЕМЯ: 10:23</span>
               <span class="weather">ПОГОДА ВОЛГОГРАД: +27°C</span>
             </div>
           </div>
+
           <div class="hero">
             <div class="hero-content">
               <h1>
@@ -42,6 +55,7 @@
           Your browser does not support the video tag.
         </video>
       </header>
+
       <nav class="hotel-nav">
         <ul>
           <li><a href="#">ГЛАВНАЯ</a></li>
@@ -57,98 +71,86 @@
           </li>
           <li><a href="#">КОНТАКТЫ</a></li>
         </ul>
-
         <footer class="footer-info">
           <div class="social-links">
-            <a href="#"><i class="fab fa-vk"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"
+              ><img
+                src="../src/svg/3787324_vkontakte_brand_logo_social media_vk_icon.svg"
+                alt="VK icon"
+            /></a>
+            <a href="#"
+              ><img
+                src="../src/svg/3225194_app_facebook_logo_media_popular_icon.svg"
+                alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img
+                src="../src/svg/294709_circle_twitter_icon.svg"
+                alt="Twitter"
+            /></a>
+            <a href="#"
+              ><img
+                src="../src/svg/5869372_classmates_classmates.com_network_icon.svg"
+                alt="Odnoklassniki"
+            /></a>
           </div>
           <p>© 2025. Все права защищены.</p>
           <p>Язык: <a href="#">RU</a> / <a href="#">ENG</a></p>
         </footer>
+
         <div class="booking-button">
           <a href="#">Забронировать</a>
         </div>
       </nav>
     </div>
+
     <main>
       <div class="parent">
-        <div class="div1">
+        <a href="#" class="div1">
           <img src="../src/images/cozy_rooms.jpg" alt="Уютные номера" />
-        </div>
-        <div class="div2">
+          <span class="image-text cozy_rooms">Уютные номера</span>
+        </a>
+        <a href="#" class="div2">
           <img
             src="../src/images/special_offers.jpg"
             alt="Специальные предложения"
           />
-        </div>
-        <div class="div3">
+          <span class="image-text special_offers"
+            >Специальные <br />
+            предложения</span
+          >
+        </a>
+        <a href="#" class="div3">
           <img
             src="../src/images/organization_performance.jpg"
             alt="Организация мероприятий"
           />
-        </div>
-        <div class="div4">
+          <span class="image-text organization_performance"
+            >Организация <br />мероприятий</span
+          >
+        </a>
+        <a href="#" class="div4">
           <img src="../src/images/hotel_gallery.jpg" alt="Галерея отеля" />
-        </div>
-        <div class="div5">
+          <span class="image-text hotel_gallery"
+            >Галерея <br />
+            отеля</span
+          >
+        </a>
+        <a href="#" class="div5">
           <img src="../src/images/services.jpg" alt="Услуги 24 часа" />
-        </div>
-        <div class="div6">
+          <span class="image-text services"
+            >Услуги <br />
+            24 часа</span
+          >
+        </a>
+        <a href="#" class="div6">
           <img src="../src/images/figure.jpg" alt="Что посетить в Волгограде" />
-        </div>
+          <span class="image-text figure"
+            >Что посетить <br />
+            в Волгограде</span
+          >
+        </a>
       </div>
     </main>
-
-    <!--  <main>
-      <section class="content-grid">
-        <div class="grid-item comfortable-rooms">
-          <a href="#">
-            <img src="../src/images/cozy_rooms.jpg" alt="Уютные номера" />
-            <span>Уютные номера</span>
-          </a>
-        </div>
-        <div class="grid-item special-offers">
-          <a href="#">
-            <img
-              src="../src/images/special_offers.jpg"
-              alt="Специальные предложения"
-            />
-            <span>Специальные предложения</span>
-          </a>
-        </div>
-        <div class="grid-item events">
-          <a href="#">
-            <img
-              src="../src/images/organization_performance.jpg"
-              alt="Организация мероприятий"
-            />
-            <span>Организация мероприятий</span>
-          </a>
-        </div>
-        <div class="grid-item hotel-gallery">
-          <a href="#">
-            <img src="../src/images/hotel_gallery.jpg" alt="Галерея отеля" />
-            <span>Галерея отеля</span>
-          </a>
-        </div>
-        <div class="grid-item services">
-          <a href="#">
-            <img src="../src/images/services.jpg" alt="Услуги 24 часа" />
-            <span>Услуги 24 часа</span>
-          </a>
-        </div>
-        <div class="grid-item volgograd-places">
-          <a href="#">
-            <img
-              src="../src/images/figure.jpg"
-              alt="Что посетить в Волгограде"
-            />
-            <span>Что посетить в Волгограде</span>
-          </a>
-        </div>
-      </section>
-    </main> -->
   </body>
 </html>
