@@ -7,82 +7,148 @@
   </head>
   <body>
     <div class="container">
-      <header class="header">
-        <div class="top-bar">
-          <div class="time-weather">
-            <div>МЕСТНОЕ ВРЕМЯ: 10:23</div>
-            <div>ПОГОДА ВОЛГОГРАД: +27 °C</div>
+      <header>
+        <div class="header-wrapper">
+          <div class="header-top">
+            <div class="logo">
+              <img src="../src/images/logo.png" alt="Hampton by Hilton Logo" />
+            </div>
+            <div class="time-weather">
+              <span class="time">МЕСТНОЕ ВРЕМЯ: 10:23</span>
+              <span class="weather">ПОГОДА ВОЛГОГРАД: +27°C</span>
+            </div>
           </div>
-          <nav>
-            <ul class="main-nav">
-              <li><a href="#">ГЛАВНАЯ</a></li>
-              <li><a href="#">НОМЕРА</a></li>
-              <li><a href="#">ГАЛЕРЕЯ</a></li>
-              <li><a href="#">СПЕЦ. ПРЕДЛОЖЕНИЯ</a></li>
-              <li><a href="#">МЕРОПРИЯТИЯ</a></li>
-              <li><a href="#">УСЛУГИ</a></li>
-              <li><a href="#">ДОСТОПРИМЕЧАТЕЛЬНОСТИ</a></li>
-              <li><a href="#">КОНТАКТЫ</a></li>
-            </ul>
-          </nav>
+          <div class="hero">
+            <div class="hero-content">
+              <h1>
+                Добро пожаловать в отель <br />
+                Hampton Volgograd
+              </h1>
+              <span class="red-line"></span>
+              <p class="content-level-1">
+                Hampton by Hilton Volgograd Profsoyuznaya - <br />это
+                современный отель, который предоставляет <br />свои услуги
+                путешественникам, ценящим <br />качество за разумные деньги.
+              </p>
+              <p class="content-level-2">
+                Hampton by Hilton - Превосходя ожидания.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="hero-text">
-          <h1>Добро пожаловать в отель Hampton Volgograd</h1>
-          <p>
-            Hampton by Hilton Volgograd Profsoyuznaya – это современный отель,
-            который предоставляет свои услуги путешественникам, ценящим качество
-            за разумные деньги. Hampton by Hilton - Превосходя ожидания.
-          </p>
-        </div>
+        <video autoplay muted loop id="header-video">
+          <source src="../src/video/hello_site_video.mp4" type="video/mp4" />
+          <source src="../src/video/hello_site_video.mp4" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
       </header>
+      <nav class="hotel-nav">
+        <ul>
+          <li><a href="#">ГЛАВНАЯ</a></li>
+          <li><a href="#">НОМЕРА</a></li>
+          <li><a href="#">ГАЛЕРЕЯ</a></li>
+          <li>
+            <a href="#">СПЕЦ ПРЕДЛОЖЕНИЯ</a>
+          </li>
+          <li><a href="#">МЕРОПРИЯТИЯ</a></li>
+          <li><a href="#">УСЛУГИ</a></li>
+          <li>
+            <a href="#">ДОСТОПРИМЕЧАТЕЛЬНОСТИ</a>
+          </li>
+          <li><a href="#">КОНТАКТЫ</a></li>
+        </ul>
 
-      <main class="main-content">
-        <section class="content-section">
-          <!-- <img src="" alt="Уютные номера" /> -->
-          <h2>Уютные номера</h2>
-        </section>
-        <section class="content-section">
-          <!-- <img src="" alt="Специальные предложения" /> -->
-          <h2>Специальные предложения</h2>
-        </section>
-        <section class="content-section">
-          <!-- <img src="" alt="Организация мероприятий" /> -->
-          <h2>Организация мероприятий</h2>
-        </section>
-        <section class="content-section">
-          <!-- <img src="" alt="Галерея отеля" /> -->
-          <h2>Галерея отеля</h2>
-        </section>
-        <section class="content-section">
-          <!-- <img src="" alt="Услуги 24 часа" /> -->
-          <h2>Услуги 24 часа</h2>
-        </section>
-        <section class="content-section">
-          <!-- <img src="" alt="Что посетить в Волгограде" /> -->
-          <h2>Что посетить в Волгограде</h2>
-        </section>
-      </main>
+        <footer class="footer-info">
+          <div class="social-links">
+            <a href="#"><i class="fab fa-vk"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+          <p>© 2025. Все права защищены.</p>
+          <p>Язык: <a href="#">RU</a> / <a href="#">ENG</a></p>
+        </footer>
+        <div class="booking-button">
+          <a href="#">Забронировать</a>
+        </div>
+      </nav>
     </div>
-    <!-- Правая колонка -->
-    <aside class="right-sidebar">
-      <a href="#" class="book-button">Забронировать</a>
+    <main>
+      <div class="parent">
+        <div class="div1">
+          <img src="../src/images/cozy_rooms.jpg" alt="Уютные номера" />
+        </div>
+        <div class="div2">
+          <img
+            src="../src/images/special_offers.jpg"
+            alt="Специальные предложения"
+          />
+        </div>
+        <div class="div3">
+          <img
+            src="../src/images/organization_performance.jpg"
+            alt="Организация мероприятий"
+          />
+        </div>
+        <div class="div4">
+          <img src="../src/images/hotel_gallery.jpg" alt="Галерея отеля" />
+        </div>
+        <div class="div5">
+          <img src="../src/images/services.jpg" alt="Услуги 24 часа" />
+        </div>
+        <div class="div6">
+          <img src="../src/images/figure.jpg" alt="Что посетить в Волгограде" />
+        </div>
+      </div>
+    </main>
 
-      <ul class="social-icons">
-        <li>
-          <a href="#"><i class="fab fa-vk"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fab fa-tripadvisor"></i></a>
-        </li>
-      </ul>
-
-      <p class="copyright">© 2015. Все права защищены.<br />Язык: RU / ENG</p>
-    </aside>
+    <!--  <main>
+      <section class="content-grid">
+        <div class="grid-item comfortable-rooms">
+          <a href="#">
+            <img src="../src/images/cozy_rooms.jpg" alt="Уютные номера" />
+            <span>Уютные номера</span>
+          </a>
+        </div>
+        <div class="grid-item special-offers">
+          <a href="#">
+            <img
+              src="../src/images/special_offers.jpg"
+              alt="Специальные предложения"
+            />
+            <span>Специальные предложения</span>
+          </a>
+        </div>
+        <div class="grid-item events">
+          <a href="#">
+            <img
+              src="../src/images/organization_performance.jpg"
+              alt="Организация мероприятий"
+            />
+            <span>Организация мероприятий</span>
+          </a>
+        </div>
+        <div class="grid-item hotel-gallery">
+          <a href="#">
+            <img src="../src/images/hotel_gallery.jpg" alt="Галерея отеля" />
+            <span>Галерея отеля</span>
+          </a>
+        </div>
+        <div class="grid-item services">
+          <a href="#">
+            <img src="../src/images/services.jpg" alt="Услуги 24 часа" />
+            <span>Услуги 24 часа</span>
+          </a>
+        </div>
+        <div class="grid-item volgograd-places">
+          <a href="#">
+            <img
+              src="../src/images/figure.jpg"
+              alt="Что посетить в Волгограде"
+            />
+            <span>Что посетить в Волгограде</span>
+          </a>
+        </div>
+      </section>
+    </main> -->
   </body>
 </html>
