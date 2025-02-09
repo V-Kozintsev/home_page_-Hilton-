@@ -7,14 +7,17 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const isProduction = process.env.NODE_ENV === "production"; // Определяем, production это или development
+
 export default {
-  mode: "production",
+  mode: isProduction ? "production" : "development",
   entry: "./src/index.jsx",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "main.js",
-    publicPath: "/",
+    filename: isProduction ? "js/main.[contenthash].js" : "js/main.js", // Cache-busting
+    publicPath: "/", // Важно для GitHub Pages (если сайт в корне)
   },
+  devtool: isProduction ? false : "source-map",
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -22,8 +25,10 @@ export default {
       filename: "index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "./css/style.css",
-      chunkFilename: "[id].css",
+      filename: isProduction ? "css/style.[contenthash].css" : "css/style.css", // Cache-busting
+      chunkFilename: isProduction
+        ? "css/[id].[contenthash].css"
+        : "css/[id].css",
     }),
   ],
   module: {
@@ -42,7 +47,7 @@ export default {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.jsx?$/, // Изменено: обрабатываем и .js, и .jsx файлы
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -55,7 +60,7 @@ export default {
         test: /\.(png|jpg|gif|svg)$/i,
         type: "asset/resource",
         generator: {
-          filename: "images/[name][ext]",
+          filename: "images/[name][hash][ext]", // Добавляем хэш к именам файлов изображений
         },
       },
     ],
@@ -73,6 +78,6 @@ export default {
     },
   },
   resolve: {
-    extensions: [".js", ".jsx", ".css"], // Автоматическое добавление расширений
+    extensions: [".js", ".jsx", ".json"],
   },
 };
