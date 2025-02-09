@@ -57,18 +57,9 @@ async function getVolgogradWeather(latitude, longitude) {
 
 getVolgogradWeather(latitude, longitude);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const hotelNav = document.querySelector(".hotel-nav");
+const menuToggle = document.querySelector(".menu-toggle");
+const hotelNav = document.querySelector(".hotel-nav");
 
-  menuToggle.addEventListener("click", () => {
-    // Проверяем, открыто ли меню
-    if (hotelNav.classList.contains("open")) {
-      // Если открыто, закрываем его
-      hotelNav.classList.remove("open");
-    } else {
-      // Если закрыто, открываем его
-      hotelNav.classList.add("open");
-    }
-  });
+menuToggle.addEventListener("click", () => {
+  hotelNav.classList.toggle("open");
 });

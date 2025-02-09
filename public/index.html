@@ -17,16 +17,23 @@
       <div class="mobile-header-wrapper">
         <div class="header-top-mobile">
           <div class="menu-toggle">☰ МЕНЮ</div>
-          <div class="logo">
+          <div class="logo-mobile">
             <a href="/">
               <img src="../src/images/logo.png" alt="Hampton by Hilton Logo" />
             </a>
           </div>
         </div>
         <div class="booking-button-mobile">
-          <a href="#">Забронировать</a>
+          <a href="https://hamptonvolgograd.ru/kontakty/" target="_blank"
+            >Забронировать</a
+          >
         </div>
       </div>
+      <video autoplay muted loop id="header-video">
+        <source src="../src/video/hello_site_video.mp4" type="video/mp4" />
+        <source src="../src/video/hello_site_video.mp4" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
       <header>
         <div class="header-wrapper">
           <div class="header-top">
@@ -44,14 +51,12 @@
                 <br />
                 ВРЕМЯ
                 <span class="time-value"></span>
-                <!-- Здесь будет отображаться время -->
               </span>
               <span id="cityTemp" class="weather">
                 ПОГОДА
                 <br />
                 ВОЛГОГРАД
                 <span class="weather-value"></span>
-                <!-- Здесь будет отображаться температура -->
               </span>
             </div>
           </div>
@@ -74,11 +79,6 @@
             </div>
           </div>
         </div>
-        <video autoplay muted loop id="header-video">
-          <source src="../src/video/hello_site_video.mp4" type="video/mp4" />
-          <source src="../src/video/hello_site_video.mp4" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
       </header>
 
       <nav class="hotel-nav">
