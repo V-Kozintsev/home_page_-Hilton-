@@ -72,4 +72,7 @@ export default {
       overlay: true,
     },
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".css"], // Автоматическое добавление расширений
+  },
 };
