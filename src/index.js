@@ -1,7 +1,6 @@
 //index.js
 import "./main.css";
 
-console.log("Hello,Hampton!");
 async function getVolgogradTime() {
   try {
     const response = await fetch("https://ipinfo.io/json");
