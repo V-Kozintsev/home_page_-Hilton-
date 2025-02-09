@@ -25,6 +25,18 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[hash].[ext]", // формирование имени файла
+              outputPath: "images/", // путь, куда будут сохраняться изображения в папке dist
+            },
+          },
+        ],
+      },
+      {
         test: /\.html$/,
         use: [
           {
