@@ -1,6 +1,9 @@
-//index.js коммит
+//index.js
 import "./main.css";
+import "intl";
+import "intl/locale-data/jsonp/ru.js";
 
+console.log("Hello,Hampton!");
 async function getVolgogradTime() {
   try {
     const response = await fetch("https://ipinfo.io/json");
@@ -38,33 +41,6 @@ async function getVolgogradTime() {
     }
   }
 }
+
 getVolgogradTime();
 setInterval(getVolgogradTime, 1000);
-
-const apiKey = "f7f0f48145544647b19130539240210";
-const latitude = 48.707;
-const longitude = 44.517;
-
-async function getVolgogradWeather() {
-  const cityTemp = document.getElementById("cityTemp");
-  try {
-    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}&aqi=no`;
-
-    const response = await fetch(apiUrl);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    const temperatureCelsius = Math.round(data.current.temp_c);
-    cityTemp.innerText = `ПОГОДА ВОЛГОГРАД: ${temperatureCelsius}°C`;
-
-    console.log(`Погода в Волгограде: ${temperatureCelsius}°C`);
-  } catch (error) {
-    console.error("Ошибка при получении данных о погоде:", error);
-  }
-}
-
-getVolgogradWeather();
