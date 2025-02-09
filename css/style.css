@@ -313,6 +313,24 @@ main {
 .booking-button-mobile {
   display: none;
 }
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 4rem); /* Мин., Предпочтит., Макс. */
+  /* Другие стили */
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  /* Другие стили */
+}
+
+.image-text {
+  font-size: clamp(
+    1rem,
+    3vw,
+    2rem
+  ); /* Адаптивный размер текста на изображениях */
+}
 @media (max-width: 768px) {
   /* Стили для родительского контейнера mobile-header-wrapper */
   .mobile-header-wrapper {
@@ -407,6 +425,20 @@ main {
     box-sizing: border-box;
     cursor: pointer;
   }
+  .hero-content h1 {
+    font-size: clamp(
+      2rem,
+      7vw,
+      3.5rem
+    ); /* Уменьшаем максимальный размер на мобильных */
+  }
+  .hero-content p {
+    font-size: clamp(
+      1rem,
+      3vw,
+      1.2rem
+    ); /* Уменьшаем максимальный размер на мобильных */
+  }
 
   /* Стили для ссылки внутри кнопки "Забронировать" (a) */
   .booking-button-mobile a {
@@ -459,6 +491,18 @@ main {
   header {
     margin-top: 60px;
     width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: clamp(
+      2rem,
+      9vw,
+      3rem
+    ); /* Еще уменьшаем на самых маленьких экранах */
+  }
+  .hero-content p {
+    font-size: clamp(0.8rem, 4vw, 1rem);
   }
 }
 
