@@ -14,7 +14,6 @@ export default [
         require: "readonly",
         process: "readonly",
         __dirname: "readonly",
-        Intl: "readonly", // Добавлено для поддержки Intl
       },
     },
   },

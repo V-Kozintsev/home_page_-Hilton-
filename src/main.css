@@ -269,8 +269,43 @@ main {
   position: absolute;
   left: 50%;
   bottom: 50%;
-
   line-height: 1.2;
   font-size: 1.6em;
   color: rgb(224, 224, 224);
+}
+
+.time-weather {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 200px;
+}
+#volgograd-time {
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  position: relative;
+}
+
+.time-value {
+  position: absolute;
+  bottom: 0%;
+  right: -55%;
+  font-size: 2em;
+  transform: translate(55%);
+}
+
+#cityTemp {
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  position: relative;
+}
+
+.weather-value {
+  position: absolute;
+  bottom: 0%;
+  right: -50%;
+  font-size: 2em;
+  transform: translate(50%);
 }
