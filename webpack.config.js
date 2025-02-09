@@ -1,23 +1,16 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import path from "path";
-import { fileURLToPath } from "url";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const path = require("path");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const isProduction = process.env.NODE_ENV === "production"; // Определяем, production это или development
-
-export default {
-  mode: isProduction ? "production" : "development",
-  entry: "./src/index.jsx",
+module.exports = {
+  mode: "production",
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: isProduction ? "js/main.[contenthash].js" : "js/main.js", // Cache-busting
-    publicPath: "/", // Важно для GitHub Pages (если сайт в корне)
+    filename: "main.js",
+    publicPath: "/", // Важно для правильной работы путей
   },
-  devtool: isProduction ? false : "source-map",
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -25,10 +18,8 @@ export default {
       filename: "index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: isProduction ? "css/style.[contenthash].css" : "css/style.css", // Cache-busting
-      chunkFilename: isProduction
-        ? "css/[id].[contenthash].css"
-        : "css/[id].css",
+      filename: "./css/style.css",
+      chunkFilename: "[id].css",
     }),
   ],
   module: {
@@ -47,12 +38,12 @@ export default {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            presets: ["@babel/preset-env", "@babel/preset-react"], // Явно указываем presets здесь
           },
         },
       },
@@ -60,7 +51,7 @@ export default {
         test: /\.(png|jpg|gif|svg)$/i,
         type: "asset/resource",
         generator: {
-          filename: "images/[name][hash][ext]", // Добавляем хэш к именам файлов изображений
+          filename: "images/[name][ext]",
         },
       },
     ],
@@ -76,8 +67,5 @@ export default {
     client: {
       overlay: true,
     },
-  },
-  resolve: {
-    extensions: [".js", ".jsx", ".json"],
   },
 };
