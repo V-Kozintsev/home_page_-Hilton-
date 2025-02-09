@@ -1,4 +1,4 @@
-//index.js
+//index.js коммит
 import "./main.css";
 
 async function getVolgogradTime() {
