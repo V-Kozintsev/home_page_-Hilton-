@@ -9,7 +9,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "main.js",
-    publicPath: "/", // Важно для правильной работы путей
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -17,6 +16,7 @@ module.exports = {
       template: "./public/index.html",
       filename: "index.html",
     }),
+
     new MiniCssExtractPlugin({
       filename: "./css/style.css",
       chunkFilename: "[id].css",
@@ -42,16 +42,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"], // Явно указываем presets здесь
-          },
-        },
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/i,
-        type: "asset/resource",
-        generator: {
-          filename: "images/[name][ext]",
         },
       },
     ],
