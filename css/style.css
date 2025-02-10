@@ -613,5 +613,11 @@ main {
     font-size: 1.6em;
     color: rgb(224, 224, 224);
   }
+  .parent img {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
