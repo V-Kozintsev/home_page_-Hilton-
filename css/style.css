@@ -332,10 +332,13 @@ main {
   ); /* Адаптивный размер текста на изображениях */
 }
 .header-top-mobile,
-.booking-button-mobile {
+.booking-button-mobile,
+.footer-mobile {
   display: none;
 }
-
+.footer-descktop {
+  display: block;
+}
 .hero-content h1 {
   font-size: clamp(2rem, 5vw, 4rem);
 }
@@ -353,6 +356,9 @@ main {
   .container {
     flex-direction: column;
     align-items: stretch;
+  }
+  .footer-mobile {
+    display: block;
   }
 
   /* Стили для мобильного хедера */
@@ -455,21 +461,103 @@ main {
 
   /* Скрытие элементов, не нужных в мобильной версии */
   .logo,
-  .time-weather {
+  .time-weather,
+  .footer-descktop {
     display: none;
   }
 
   /* Стили для видео хедера */
-  #header-video {
-    height: auto;
-    width: 100%;
-    object-fit: cover;
-    position: relative;
-  }
 
   /* Скрытие кнопки бронирования в десктопной версии */
   .booking-button {
     display: none;
+  }
+  /* Video and Header Container */
+  .video-header-container {
+    position: relative; /*  Чтобы позиционировать header абсолютно */
+    width: 100%;
+    height: 90vh; /*  Занимает 90% высоты экрана */
+    overflow: hidden; /* Скрываем все, что выходит за границы */
+  }
+
+  #header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /*  Под текстом */
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+    color: white;
+    text-align: center;
+  }
+
+  header .header-wrapper {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  header .hero-content h1 {
+    font-size: 2em;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 10px;
+  }
+
+  header .hero-content p {
+    font-size: 1em;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  header .red-line {
+    width: 50px;
+    height: 3px;
+    background-color: red;
+    margin: 10px auto;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .parent a {
+    grid-column: auto;
+    grid-row: auto;
+    height: auto;
+  }
+
+  .parent img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
   }
 }
 
