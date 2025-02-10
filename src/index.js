@@ -57,7 +57,7 @@ async function getVolgogradWeather(latitude, longitude) {
 
 getVolgogradWeather(latitude, longitude);
 
-const menuToggle = document.querySelector(".menu-toggle");
+/* const menuToggle = document.querySelector(".menu-toggle");
 const hotelNav = document.querySelector(".hotel-nav");
 
 if (menuToggle && hotelNav) {
@@ -67,4 +67,25 @@ if (menuToggle && hotelNav) {
   });
 } else {
   console.error("Элемент с классом 'menu-toggle' или 'hotel-nav' не найден.");
-}
+} */
+/* document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const hotelNav = document.querySelector(".hotel-nav");
+  const body = document.body;
+
+  menuToggle.addEventListener("click", function () {
+    hotelNav.classList.toggle("open");
+    body.classList.toggle("menu-open");
+  });
+}); */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const hotelNav = document.querySelector(".hotel-nav");
+
+  //  Изначально закрываем меню
+  hotelNav.classList.remove("open");
+
+  menuToggle.addEventListener("click", () => {
+    hotelNav.classList.toggle("open");
+  });
+});
