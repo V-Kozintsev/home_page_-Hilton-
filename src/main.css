@@ -29,7 +29,10 @@ header {
   position: relative;
   overflow: hidden;
 }
-
+.video-header-container {
+  width: 100%;
+  display: flex;
+}
 .header-wrapper {
   display: flex;
   flex-direction: column;
@@ -223,16 +226,16 @@ main {
 }
 
 /* Image Text Styles */
-.image-text {
+/* .image-text {
   position: absolute;
-}
-.cozy_rooms {
+} */
+/* .cozy_rooms {
   position: absolute;
   right: 20px;
   top: 20px;
   font-size: 1.6em;
   color: rgba(61, 60, 60, 0.753);
-}
+} */
 .special_offers {
   position: absolute;
   left: 40px;
@@ -356,6 +359,7 @@ main {
   .container {
     flex-direction: column;
     align-items: stretch;
+    min-height: 0;
   }
   .footer-mobile {
     display: block;
@@ -466,18 +470,16 @@ main {
     display: none;
   }
 
-  /* Стили для видео хедера */
-
   /* Скрытие кнопки бронирования в десктопной версии */
   .booking-button {
     display: none;
   }
   /* Video and Header Container */
   .video-header-container {
-    position: relative; /*  Чтобы позиционировать header абсолютно */
+    position: relative;
     width: 100%;
-    height: 90vh; /*  Занимает 90% высоты экрана */
-    overflow: hidden; /* Скрываем все, что выходит за границы */
+    height: 90vh;
+    overflow: hidden;
   }
 
   #header-video {
@@ -487,9 +489,10 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1; /*  Под текстом */
+    z-index: 1;
   }
-
+  .video-header-container {
+  }
   header {
     position: absolute;
     top: 0;
@@ -507,27 +510,33 @@ main {
     text-align: center;
   }
 
+  .header-wrapper {
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+  }
+
   header .header-wrapper {
     width: 100%;
     max-width: 800px;
   }
 
   header .hero-content h1 {
-    font-size: 2em;
+    font-size: 3em;
     text-shadow: 2px 2px 4px #000000;
-    margin-bottom: 10px;
+    /* margin-bottom: 50px; */
   }
 
   header .hero-content p {
-    font-size: 1em;
+    font-size: 1.5em;
     text-shadow: 2px 2px 4px #000000;
   }
 
   header .red-line {
-    width: 50px;
+    width: 110px;
     height: 3px;
     background-color: red;
-    margin: 10px auto;
+    margin: 50px auto;
   }
 
   main {
@@ -552,11 +561,56 @@ main {
   }
 
   .image-text {
-    position: absolute;
+    /*  position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /*  color: white; */
     text-shadow: 2px 2px 4px #000000;
+  }
+
+  .cozy_rooms {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.6em;
+    color: rgba(61, 60, 60, 0.753);
+  }
+  .special_offers {
+    position: absolute;
+    left: 40px;
+    bottom: 60px;
+    font-size: 1.4em;
+  }
+  .organization_performance {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    line-height: 1.5;
+    font-size: 1.4em;
+  }
+  .hotel_gallery {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    line-height: 1.2;
+    font-size: 1.6em;
+    color: white;
+  }
+  .services {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    line-height: 1.2;
+    font-size: 1.6em;
+    color: rgb(224, 224, 224);
+  }
+  .figure {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    line-height: 1.2;
+    font-size: 1.6em;
+    color: rgb(224, 224, 224);
   }
 }
