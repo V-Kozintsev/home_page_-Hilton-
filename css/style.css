@@ -309,10 +309,10 @@ main {
   transform: translate(50%);
 }
 
-.header-top-mobile,
+/* .header-top-mobile,
 .booking-button-mobile {
   display: none;
-}
+} */
 
 .hero-content h1 {
   font-size: clamp(2rem, 5vw, 4rem); /* Мин., Предпочтит., Макс. */
@@ -349,81 +349,16 @@ main {
 }
 
 @media (max-width: 768px) {
-  .mobile-header-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9;
+  .container {
+    flex-direction: column;
+    align-items: stretch; /*  Растягиваем на всю ширину */
   }
 
-  /* == Кнопка "Забронировать" (mobile) == */
-  .booking-button-mobile {
-    background: url(../9211e7c7ddac8cc200ce.jpg) no-repeat center center;
-    background-color: #004694;
-    background-position: 95% 0;
-    align-items: center;
-    justify-content: start;
-    display: flex;
-    padding: 0;
-    font-size: 18px;
-    height: 67px;
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: fixed;
-    top: 67px; /*  Под шапкой */
-    left: 0;
-    z-index: 8;
-    transition: transform 0.6s ease; /*  Плавность */
-  }
-  .booking-button-mobile a {
-    color: white;
-    text-decoration: none;
-  }
-  .booking-button {
-    display: none;
-  }
-
-  /* == Навигация (hotel-nav) == */
-  .hotel-nav {
-    position: fixed;
-    top: 67px; /* Под шапкой */
-    left: 0;
-    width: 100%;
-    height: 60vh; /* Высота меню */
-    transform: translateY(-100%);
-    transition: transform 0.6s ease;
-    color: white;
-    overflow-y: auto;
-    background-color: white;
-    /* Цвет фона меню */
-  }
-
-  .hotel-nav.open {
-    transform: translateY(0);
-  }
-
-  body.menu-open .booking-button-mobile {
-    transform: translateY(60vh); /* Кнопка уходит вниз (при открытии меню) */
-  }
-
-  /* == Сдвиг всего контента, кроме кнопки, при открытии меню == */
-  body.menu-open header,
-  body.menu-open main,
-  body.menu-open footer {
-    transform: translateY(
-      60vh + 67px
-    ); /* Сдвигаем контент вниз на высоту меню и шапки */
-    transition: transform 0.6s ease; /* Плавность для контента */
-  }
-
-  /* == Верхнее меню (header-top-mobile) == */
   .header-top-mobile {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px;
+    padding: 40px 40px;
     background-color: #f0f0f0;
     box-sizing: border-box;
     width: 100%;
@@ -437,20 +372,123 @@ main {
   }
 
   .header-top-mobile .logo-mobile img {
-    width: 80px;
+    width: 70px;
     height: auto;
   }
 
-  /* == Скрываем элементы == */
+  .hotel-nav {
+    position: static;
+    height: auto;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    transition: max-height 0.9s ease;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .hotel-nav.open {
+    max-height: 500px;
+  }
+
+  .hotel-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hotel-nav li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .booking-button-mobile {
+    width: 100%;
+    background: url(../9211e7c7ddac8cc200ce.jpg) no-repeat center center;
+    background-color: #004694;
+    color: white;
+    background-position: 95% 0;
+    align-items: center;
+    justify-content: start;
+    display: flex;
+    padding: 0;
+    font-size: 18px;
+    height: 67px;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .booking-button-mobile a {
+    color: #f0f0f0;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px;
+    width: 100%;
+    height: 67px;
+  }
+
   .logo,
   .time-weather {
     display: none;
   }
 
-  /* == Header == */
+  #header-video {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+  .booking-button {
+    display: none;
+  }
+
+  /*
+
+
+  /* .mobile-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+  }
+
+  /* .hotel-nav {
+    position: fixed;
+    top: 67px;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    transform: translateY(-100%);
+    transition: transform 0.6s ease;
+    color: white;
+    overflow-y: auto;
+    background-color: white;
+  } */
+
+  /* body.menu-open .booking-button-mobile {
+    transform: translateY(60vh);
+  }
+
+  body.menu-open header,
+  body.menu-open main,
+  body.menu-open footer {
+    transform: translateY(60vh + 67px);
+    transition: transform 0.6s ease;
+  }
+
   header {
     margin-top: 60px;
     width: 100%;
-  }
+  } */
 }
 
