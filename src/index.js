@@ -3,6 +3,40 @@ import "./main.css";
 
 import { DateTime } from "luxon";
 
+document.addEventListener("DOMContentLoaded", () => {
+  const langLinks = document.querySelectorAll(".lang-link");
+  const translatableElements = document.querySelectorAll("[data-translate]");
+
+  // Пример объекта с переводами
+  const translations = {
+    ru: {
+      copyright: "© 2025. Все права защищены.",
+    },
+    en: {
+      copyright: "© 2025. All rights reserved.",
+    },
+  };
+
+  // Функция для смены языка
+  function changeLanguage(lang) {
+    translatableElements.forEach((element) => {
+      const key = element.dataset.translate;
+      if (translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  // Обработчики кликов на ссылки языков
+  langLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault(); // Предотвращаем переход по ссылке
+      const lang = link.dataset.lang;
+      changeLanguage(lang);
+    });
+  });
+});
+
 function getTimeInTimeZone(timeZone) {
   return DateTime.now().setZone(timeZone).toFormat("HH:mm");
 }
