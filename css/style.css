@@ -349,16 +349,18 @@ main {
 }
 
 @media (max-width: 768px) {
+  /* Общие стили для контейнера */
   .container {
     flex-direction: column;
-    align-items: stretch; /*  Растягиваем на всю ширину */
+    align-items: stretch;
   }
 
+  /* Стили для мобильного хедера */
   .header-top-mobile {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 40px;
+    padding: 40px;
     background-color: #f0f0f0;
     box-sizing: border-box;
     width: 100%;
@@ -371,23 +373,29 @@ main {
     color: #333;
   }
 
+  /* Стили для логотипа в мобильном хедере */
   .header-top-mobile .logo-mobile img {
     width: 70px;
     height: auto;
   }
 
+  /* Стили для навигационного меню */
   .hotel-nav {
     position: static;
     height: auto;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     overflow-y: auto;
     transition: max-height 0.9s ease;
     max-height: 0;
     overflow: hidden;
+    width: 100%;
+  }
+
+  .hotel-nav ul li:last-child {
+    margin-bottom: 20px;
   }
   .hotel-nav.open {
     max-height: 500px;
@@ -397,17 +405,24 @@ main {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
   }
 
+  .hotel-nav li {
+    text-align: center;
+    box-sizing: border-box;
+  }
   .hotel-nav li a {
     display: block;
     color: #333;
     text-decoration: none;
     padding: 10px 0;
     font-weight: 500;
+    margin-top: 10px;
     font-size: 16px;
   }
 
+  /* Стили для мобильной кнопки бронирования */
   .booking-button-mobile {
     width: 100%;
     background: url(../9211e7c7ddac8cc200ce.jpg) no-repeat center center;
@@ -420,10 +435,11 @@ main {
     padding: 0;
     font-size: 18px;
     height: 67px;
-    width: 100%;
     box-sizing: border-box;
     cursor: pointer;
   }
+
+  /* Стили для ссылки внутри мобильной кнопки бронирования */
   .booking-button-mobile a {
     color: #f0f0f0;
     text-decoration: none;
@@ -431,64 +447,29 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 40px;
+    padding: 40px;
     width: 100%;
     height: 67px;
+    box-sizing: border-box;
   }
 
+  /* Скрытие элементов, не нужных в мобильной версии */
   .logo,
   .time-weather {
     display: none;
   }
 
+  /* Стили для видео хедера */
   #header-video {
     height: auto;
     width: 100%;
     object-fit: cover;
     position: relative;
   }
+
+  /* Скрытие кнопки бронирования в десктопной версии */
   .booking-button {
     display: none;
   }
-
-  /*
-
-
-  /* .mobile-header-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9;
-  }
-
-  /* .hotel-nav {
-    position: fixed;
-    top: 67px;
-    left: 0;
-    width: 100%;
-    height: 60vh;
-    transform: translateY(-100%);
-    transition: transform 0.6s ease;
-    color: white;
-    overflow-y: auto;
-    background-color: white;
-  } */
-
-  /* body.menu-open .booking-button-mobile {
-    transform: translateY(60vh);
-  }
-
-  body.menu-open header,
-  body.menu-open main,
-  body.menu-open footer {
-    transform: translateY(60vh + 67px);
-    transition: transform 0.6s ease;
-  }
-
-  header {
-    margin-top: 60px;
-    width: 100%;
-  } */
 }
 
