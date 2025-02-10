@@ -331,8 +331,24 @@ main {
     2rem
   ); /* Адаптивный размер текста на изображениях */
 }
+.header-top-mobile,
+.booking-button-mobile {
+  display: none;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.image-text {
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
 @media (max-width: 768px) {
-  /* Стили для родительского контейнера mobile-header-wrapper */
   .mobile-header-wrapper {
     position: fixed;
     top: 0;
@@ -341,74 +357,10 @@ main {
     z-index: 9;
   }
 
-  /* Стили для header-wrapper */
-  .header-wrapper {
-    align-items: center;
-    justify-content: end;
-  }
-
-  /* ==========================================================================
-   * Hero Content (тексты)
-   * ========================================================================== */
-
-  /* Стили для заголовка hero-content h1 */
-  .hero-content h1 {
-    font-size: 54px;
-    /* line-height: 1.5; */
-  }
-
-  /* Стили для параграфа hero-content p */
-  .hero-content p {
-    font-size: 26px;
-    /* line-height: 1.5; */
-  }
-
-  /* Стили для элемента content-level-2 */
-  .content-level-2 {
-    margin-bottom: 200px;
-  }
-
-  /* ==========================================================================
-   * Верхнее меню (header-top-mobile)
-   * ========================================================================== */
-
-  /* Стили для контейнера верхнего меню */
-  .header-top-mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 40px;
-    /* padding-left: ; */
-    background-color: #f0f0f0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 67px;
-    box-sizing: border-box;
-  }
-
-  /* Стили для переключателя меню (menu-toggle) */
-  .header-top-mobile .menu-toggle {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-  }
-
-  /* Стили для логотипа (logo-mobile) */
-  .header-top-mobile .logo-mobile img {
-    width: 80px;
-    height: auto;
-  }
-
-  /* ==========================================================================
-   * Кнопка "Забронировать"
-   * ========================================================================== */
-
-  /* Стили для кнопки "Забронировать" (booking-button-mobile) */
+  /* == Кнопка "Забронировать" (mobile) == */
   .booking-button-mobile {
     background: url("./images/booking-mobile.jpg") no-repeat center center;
     background-color: #004694;
-    color: white;
-    /* background-size: cover; */
     background-position: 95% 0;
     align-items: center;
     justify-content: start;
@@ -417,91 +369,87 @@ main {
     font-size: 18px;
     height: 67px;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 8;
-    padding: 30px 40px;
-    position: relative;
     box-sizing: border-box;
     cursor: pointer;
+    position: fixed;
+    top: 67px; /*  Под шапкой */
+    left: 0;
+    z-index: 8;
+    transition: transform 0.6s ease; /*  Плавность */
   }
-  .hero-content h1 {
-    font-size: clamp(
-      2rem,
-      7vw,
-      3.5rem
-    ); /* Уменьшаем максимальный размер на мобильных */
-  }
-  .hero-content p {
-    font-size: clamp(
-      1rem,
-      3vw,
-      1.2rem
-    ); /* Уменьшаем максимальный размер на мобильных */
-  }
-
-  /* Стили для ссылки внутри кнопки "Забронировать" (a) */
   .booking-button-mobile a {
     color: white;
     text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+  }
+  .booking-button {
+    display: none;
   }
 
-  /* ==========================================================================
-   * Навигация (hotel-nav)
-   * ========================================================================== */
-
-  /* Стили для навигации */
+  /* == Навигация (hotel-nav) == */
   .hotel-nav {
     position: fixed;
-    top: 0;
+    top: 67px; /* Под шапкой */
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: #1976d2;
+    height: 60vh; /* Высота меню */
     transform: translateY(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
     color: white;
+    overflow-y: auto;
+    background-color: white;
+    /* Цвет фона меню */
   }
 
-  /* ==========================================================================
-   * Скрываем элементы
-   * ========================================================================== */
+  .hotel-nav.open {
+    transform: translateY(0);
+  }
 
+  body.menu-open .booking-button-mobile {
+    transform: translateY(60vh); /* Кнопка уходит вниз (при открытии меню) */
+  }
+
+  /* == Сдвиг всего контента, кроме кнопки, при открытии меню == */
+  body.menu-open header,
+  body.menu-open main,
+  body.menu-open footer {
+    transform: translateY(
+      60vh + 67px
+    ); /* Сдвигаем контент вниз на высоту меню и шапки */
+    transition: transform 0.6s ease; /* Плавность для контента */
+  }
+
+  /* == Верхнее меню (header-top-mobile) == */
+  .header-top-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 67px;
+  }
+
+  .header-top-mobile .menu-toggle {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .header-top-mobile .logo-mobile img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* == Скрываем элементы == */
   .logo,
   .time-weather {
     display: none;
   }
 
-  /* ==========================================================================
-   * Дополнительные стили
-   * ========================================================================== */
-
-  /* Активация меню при нажатии (hotel-nav.open) */
-  .hotel-nav.open {
-    transform: translateY(0);
-  }
-
-  /* Стили для header */
+  /* == Header == */
   header {
     margin-top: 60px;
     width: 100%;
-  }
-}
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: clamp(
-      2rem,
-      9vw,
-      3rem
-    ); /* Еще уменьшаем на самых маленьких экранах */
-  }
-  .hero-content p {
-    font-size: clamp(0.8rem, 4vw, 1rem);
   }
 }

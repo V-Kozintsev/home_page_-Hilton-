@@ -60,6 +60,11 @@ getVolgogradWeather(latitude, longitude);
 const menuToggle = document.querySelector(".menu-toggle");
 const hotelNav = document.querySelector(".hotel-nav");
 
-menuToggle.addEventListener("click", () => {
-  hotelNav.classList.toggle("open");
-});
+if (menuToggle && hotelNav) {
+  menuToggle.addEventListener("click", () => {
+    hotelNav.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+  });
+} else {
+  console.error("Элемент с классом 'menu-toggle' или 'hotel-nav' не найден.");
+}
