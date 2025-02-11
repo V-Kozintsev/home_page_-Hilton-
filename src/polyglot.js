@@ -3,7 +3,6 @@ export function polyglot() {
     const langLinks = document.querySelectorAll(".lang-link");
     const translatableElements = document.querySelectorAll("[data-translate]");
 
-    // Объект с переводами (полный пример)
     const translations = {
       ru: {
         copyright: "© 2025. Все права защищены.",
@@ -15,6 +14,7 @@ export function polyglot() {
         specialOffersImg: "Специальные предложения",
         events: "МЕРОПРИЯТИЯ",
         services: "УСЛУГИ",
+        menu: "МЕНЮ",
         servicesImg: "Услуги 24",
         attractions: "ДОСТОПРИМЕЧАТЕЛЬНОСТИ",
         contacts: "КОНТАКТЫ",
@@ -43,6 +43,7 @@ export function polyglot() {
         events: "EVENTS",
         services: "SERVICES",
         servicesImg: "Services 24",
+        menu: "MENU",
         attractions: "ATTRACTIONS",
         contacts: "CONTACTS",
         bookNow: "Book Now",
@@ -60,7 +61,6 @@ export function polyglot() {
       },
     };
 
-    // Функция для смены языка
     function changeLanguage(lang) {
       translatableElements.forEach((element) => {
         const key = element.dataset.translate;
@@ -69,7 +69,6 @@ export function polyglot() {
         }
       });
 
-      // Дополнительно: Обновление атрибутов (например, alt у изображений)
       document.querySelectorAll("[data-translate-alt]").forEach((element) => {
         const key = element.dataset.translateAlt;
         if (translations[lang] && translations[lang][key]) {
@@ -77,14 +76,12 @@ export function polyglot() {
         }
       });
 
-      // Сохраняем язык в localStorage
       localStorage.setItem("selectedLanguage", lang);
     }
 
-    // Обработчики кликов на ссылки языков
     langLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
-        event.preventDefault(); // Предотвращаем переход по ссылке
+        event.preventDefault();
         const lang = link.dataset.lang;
         changeLanguage(lang);
       });
