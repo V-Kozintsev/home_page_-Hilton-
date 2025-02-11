@@ -311,7 +311,7 @@ header {
 /* ========================= */
 .booking-button {
   margin: 0; /* Уберите любые отступы сверху */
-  background: url(/d2eb56d43c8bba2f4611.jpg) no-repeat center center;
+  background: url(../d2eb56d43c8bba2f4611.jpg) no-repeat center center;
   background-size: cover;
   color: white;
   text-align: center;
@@ -706,7 +706,7 @@ main {
   /* Стили для мобильной кнопки бронирования */
   .booking-button-mobile {
     width: 100%;
-    background: url(/9211e7c7ddac8cc200ce.jpg) no-repeat center center;
+    background: url(../9211e7c7ddac8cc200ce.jpg) no-repeat center center;
     background-color: #004694;
     color: white;
     background-position: 95% 0;
