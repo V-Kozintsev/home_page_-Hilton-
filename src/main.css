@@ -236,7 +236,7 @@ header {
   right: 0;
   width: 284px;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #f0f0f0;
   color: #333;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -290,6 +290,7 @@ header {
   color: white; /* Icon color */
   text-decoration: none;
   font-size: 4.2em; /* Adjust icon size */
+  object-fit: contain;
 }
 .social-links {
   margin-bottom: 10px;
@@ -607,7 +608,6 @@ main {
 }
 
 @media (max-width: 768px) {
-  /* Общие стили для контейнера */
   .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -622,7 +622,6 @@ main {
     display: block;
   }
 
-  /* Стили для мобильного хедера */
   .header-top-mobile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -647,13 +646,11 @@ main {
     color: #333;
   }
 
-  /* Стили для логотипа в мобильном хедере */
   .header-top-mobile .logo-mobile img {
     width: 70px;
     height: auto;
   }
 
-  /* Стили для навигационного меню */
   .hotel-nav {
     position: static;
     height: auto;
@@ -730,7 +727,6 @@ main {
     cursor: pointer;
   }
 
-  /* Стили для ссылки внутри мобильной кнопки бронирования */
   .booking-button-mobile a {
     color: #f0f0f0;
     text-decoration: none;
@@ -752,18 +748,16 @@ main {
     font-size: clamp(1rem, 3vw, 1.2rem);
   }
 
-  /* Скрытие элементов, не нужных в мобильной версии */
   .logo,
   .time-weather,
   .footer-descktop {
     display: none;
   }
 
-  /* Скрытие кнопки бронирования в десктопной версии */
   .booking-button {
     display: none;
   }
-  /* Video and Header Container */
+
   .video-header-container {
     position: relative;
     width: 100%;
@@ -819,8 +813,8 @@ main {
   }
 
   header .header-wrapper {
-    max-width: 100%; /* Растягиваем на всю ширину */
-    padding: 10px; /* Уменьшаем отступы */
+    max-width: 100%;
+    padding: 10px;
   }
 
   header .hero-content h1 {
@@ -893,7 +887,7 @@ main {
     top: 20px;
     font-size: clamp(1.2rem, 2vw, 1.6em);
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   .special_offers {
@@ -901,8 +895,8 @@ main {
     left: 40px;
     bottom: 60px;
     font-size: clamp(1.2rem, 2vw, 1.4em);
-    color: white; /* Улучшаем цвет для контраста */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   .organization_performance {
@@ -911,8 +905,8 @@ main {
     top: 30px;
     line-height: 1.5;
     font-size: clamp(1.2rem, 2vw, 1.4em);
-    color: white; /* Улучшаем цвет для контраста */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   .hotel_gallery {
@@ -922,7 +916,7 @@ main {
     line-height: 1.2;
     font-size: clamp(1.2rem, 2vw, 1.6em);
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   .services {
@@ -931,8 +925,8 @@ main {
     bottom: 30px;
     line-height: 1.2;
     font-size: clamp(1.2rem, 2vw, 1.6em);
-    color: white; /* Улучшаем цвет для контраста */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   .figure {
@@ -941,11 +935,11 @@ main {
     bottom: 50%;
     -webkit-transform: translate(-50%, 50%);
     -ms-transform: translate(-50%, 50%);
-    transform: translate(-50%, 50%); /* Центрируем с учетом высоты текста */
+    transform: translate(-50%, 50%);
     line-height: 1.2;
     font-size: clamp(1.2rem, 2vw, 1.6em);
-    color: white; /* Улучшаем цвет для контраста */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 }
 @media (max-width: 480px) {
