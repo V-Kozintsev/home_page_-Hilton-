@@ -8,6 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
+  font-size: 16px;
 }
 
 .container {
@@ -28,6 +29,7 @@ header {
   width: calc(100% - 284px);
   position: relative;
   overflow: hidden;
+  height: auto;
 }
 .video-header-container {
   width: 100%;
@@ -52,11 +54,6 @@ header {
 
 .hero-content h1 {
   margin-bottom: 50px;
-}
-
-.hero-content p {
-  font-size: 1.1em;
-  line-height: 1.5;
 }
 
 .red-line {
@@ -107,7 +104,7 @@ header {
   text-decoration: none;
   padding: 10px 0;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .hotel-nav li a:hover {
@@ -226,21 +223,21 @@ main {
 }
 
 /* Image Text Styles */
-/* .image-text {
+.image-text {
   position: absolute;
-} */
-/* .cozy_rooms {
+}
+.cozy_rooms {
   position: absolute;
   right: 20px;
   top: 20px;
   font-size: 1.6em;
   color: rgba(61, 60, 60, 0.753);
-} */
+}
 .special_offers {
   position: absolute;
   left: 40px;
   bottom: 60px;
-  font-size: 1.4em;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   color: rgb(224, 224, 224);
 }
 .organization_performance {
@@ -248,7 +245,7 @@ main {
   left: 30px;
   top: 30px;
   line-height: 1.5;
-  font-size: 1.4em;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   color: rgb(224, 224, 224);
 }
 .hotel_gallery {
@@ -256,7 +253,7 @@ main {
   left: 30px;
   top: 30px;
   line-height: 1.2;
-  font-size: 1.6em;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
   color: white;
 }
 .services {
@@ -264,7 +261,7 @@ main {
   right: 30px;
   bottom: 30px;
   line-height: 1.2;
-  font-size: 1.6em;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
   color: rgb(224, 224, 224);
 }
 .figure {
@@ -272,7 +269,7 @@ main {
   left: 50%;
   bottom: 50%;
   line-height: 1.2;
-  font-size: 1.6em;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
   color: rgb(224, 224, 224);
 }
 
@@ -293,7 +290,7 @@ main {
   position: absolute;
   bottom: 0%;
   right: -55%;
-  font-size: 2em;
+  font-size: clamp(1.5rem, 3vw, 2em);
   transform: translate(55%);
 }
 
@@ -308,14 +305,9 @@ main {
   position: absolute;
   bottom: 0%;
   right: -50%;
-  font-size: 2em;
+  font-size: clamp(1.5rem, 3vw, 2em);
   transform: translate(50%);
 }
-
-/* .header-top-mobile,
-.booking-button-mobile {
-  display: none;
-} */
 
 .hero-content h1 {
   font-size: clamp(2rem, 5vw, 4rem); /* Мин., Предпочтит., Макс. */
@@ -324,6 +316,7 @@ main {
 
 .hero-content p {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
   /* Другие стили */
 }
 
@@ -348,10 +341,6 @@ main {
 
 .hero-content p {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-.image-text {
-  font-size: clamp(1rem, 3vw, 2rem);
 }
 
 @media (max-width: 768px) {
@@ -461,6 +450,7 @@ main {
     width: 100%;
     height: 67px;
     box-sizing: border-box;
+    font-size: clamp(1rem, 3vw, 1.2rem);
   }
 
   /* Скрытие элементов, не нужных в мобильной версии */
@@ -491,8 +481,6 @@ main {
     object-fit: cover;
     z-index: 1;
   }
-  .video-header-container {
-  }
   header {
     position: absolute;
     top: 0;
@@ -517,18 +505,18 @@ main {
   }
 
   header .header-wrapper {
-    width: 100%;
-    max-width: 800px;
+    max-width: 100%; /* Растягиваем на всю ширину */
+    padding: 10px; /* Уменьшаем отступы */
   }
 
   header .hero-content h1 {
-    font-size: 3em;
+    font-size: clamp(2rem, 6vw, 3em);
     text-shadow: 2px 2px 4px #000000;
     /* margin-bottom: 50px; */
   }
 
   header .hero-content p {
-    font-size: 1.5em;
+    font-size: clamp(1rem, 3vw, 1.2em);
     text-shadow: 2px 2px 4px #000000;
   }
 
@@ -559,13 +547,19 @@ main {
     height: auto;
     object-fit: cover;
   }
+  .parent img {
+    width: 100%;
+    /* height: 50vh; */
+    object-fit: cover;
+    object-position: center;
+  }
 
   .image-text {
-    /*  position: absolute;
+    /* position: absolute;
     top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%, -50%); */
-    /*  color: white; */
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    color: white;
     text-shadow: 2px 2px 4px #000000;
   }
 
@@ -573,50 +567,67 @@ main {
     position: absolute;
     right: 20px;
     top: 20px;
-    font-size: 1.6em;
-    color: rgba(61, 60, 60, 0.753);
+    font-size: clamp(1.2rem, 2vw, 1.6em);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
   }
+
   .special_offers {
     position: absolute;
     left: 40px;
     bottom: 60px;
-    font-size: 1.4em;
+    font-size: clamp(1.2rem, 2vw, 1.4em);
+    color: white; /* Улучшаем цвет для контраста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
   }
+
   .organization_performance {
     position: absolute;
     left: 30px;
     top: 30px;
     line-height: 1.5;
-    font-size: 1.4em;
+    font-size: clamp(1.2rem, 2vw, 1.4em);
+    color: white; /* Улучшаем цвет для контраста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
   }
+
   .hotel_gallery {
     position: absolute;
     left: 30px;
     top: 30px;
     line-height: 1.2;
-    font-size: 1.6em;
+    font-size: clamp(1.2rem, 2vw, 1.6em);
     color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
   }
+
   .services {
     position: absolute;
     right: 30px;
     bottom: 30px;
     line-height: 1.2;
-    font-size: 1.6em;
-    color: rgb(224, 224, 224);
+    font-size: clamp(1.2rem, 2vw, 1.6em);
+    color: white; /* Улучшаем цвет для контраста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
   }
+
   .figure {
     position: absolute;
     left: 50%;
     bottom: 50%;
+    transform: translate(-50%, 50%); /* Центрируем с учетом высоты текста */
     line-height: 1.2;
-    font-size: 1.6em;
-    color: rgb(224, 224, 224);
+    font-size: clamp(1.2rem, 2vw, 1.6em);
+    color: white; /* Улучшаем цвет для контраста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для лучшей видимости */
   }
-  .parent img {
-    width: 100%;
-    height: 25vh;
-    object-fit: cover;
-    object-position: center;
+}
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .hero-content p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
   }
 }
