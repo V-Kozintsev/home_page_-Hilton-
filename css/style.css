@@ -659,7 +659,9 @@ main {
     width: 70px;
     height: auto;
   }
-
+  .hero-content {
+    max-width: 95%;
+  }
   .hotel-nav {
     position: static;
     height: auto;
@@ -814,7 +816,7 @@ main {
   .header-wrapper {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    /* justify-content: center; */
+    justify-content: center;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: start;
