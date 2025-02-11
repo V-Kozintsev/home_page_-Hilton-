@@ -814,7 +814,7 @@ main {
   .header-wrapper {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    /* justify-content: center; */
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: start;
@@ -824,6 +824,7 @@ main {
   header .header-wrapper {
     max-width: 100%;
     padding: 10px;
+    max-height: 100%;
   }
 
   header .hero-content h1 {
@@ -936,6 +937,15 @@ main {
     font-size: clamp(1.2rem, 2vw, 1.6em);
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .hero-content {
+    /*  Установите высоту hero-content на 100% высоты родителя */
+    height: 100%;
+    display: flex; /* Используем flexbox */
+    flex-direction: column; /*  Контент располагается вертикально */
+    justify-content: center; /*  Выравнивание по вертикали (по центру) */
+    align-items: flex-start; /*  Выравнивание по горизонтали (слева) */
+    /* overflow: auto; */ /* Если нужно прокручивать контент, который не помещается*/
   }
 
   .figure {
