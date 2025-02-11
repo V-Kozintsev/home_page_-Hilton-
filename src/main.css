@@ -236,7 +236,7 @@ header {
   right: 0;
   width: 284px;
   height: 100%;
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.95);
   color: #333;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -259,7 +259,7 @@ header {
   margin: 0;
 }
 
-.hotel-nav li a {
+.nav-item {
   display: block;
   color: #333;
   text-decoration: none;
@@ -290,7 +290,7 @@ header {
   color: white; /* Icon color */
   text-decoration: none;
   font-size: 4.2em; /* Adjust icon size */
-  object-fit: contain;
+  object-fit: contain; /* или cover, в зависимости от желаемого эффекта */
 }
 .social-links {
   margin-bottom: 10px;
@@ -518,7 +518,12 @@ main {
   font-size: clamp(1.4rem, 2.5vw, 1.6rem);
   color: rgb(224, 224, 224);
 }
-
+.time {
+  width: 80px;
+}
+.weather {
+  width: 95px;
+}
 .time-weather {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -598,6 +603,10 @@ main {
 }
 .footer-descktop {
   display: block;
+}
+
+.hero-content {
+  max-width: 45%;
 }
 .hero-content h1 {
   font-size: clamp(2rem, 5vw, 4rem);

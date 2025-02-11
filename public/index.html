@@ -28,18 +28,30 @@
 
       <nav class="hotel-nav">
         <ul>
-          <li><a href="#">ГЛАВНАЯ</a></li>
-          <li><a href="#">НОМЕРА</a></li>
-          <li><a href="#">ГАЛЕРЕЯ</a></li>
-          <li>
+          <li data-translate="main" class="nav-item">
+            <a href="#">ГЛАВНАЯ</a>
+          </li>
+          <li data-translate="rooms" class="nav-item">
+            <a href="#">НОМЕРА</a>
+          </li>
+          <li data-translate="gallery" class="nav-item">
+            <a href="#">ГАЛЕРЕЯ</a>
+          </li>
+          <li data-translate="specialOffers" class="nav-item">
             <a href="#">СПЕЦ ПРЕДЛОЖЕНИЯ</a>
           </li>
-          <li><a href="#">МЕРОПРИЯТИЯ</a></li>
-          <li><a href="#">УСЛУГИ</a></li>
-          <li>
+          <li data-translate="events" class="nav-item">
+            <a href="#">МЕРОПРИЯТИЯ</a>
+          </li>
+          <li data-translate="services" class="nav-item">
+            <a href="#">УСЛУГИ</a>
+          </li>
+          <li data-translate="attractions" class="nav-item">
             <a href="#">ДОСТОПРИМЕЧАТЕЛЬНОСТИ</a>
           </li>
-          <li><a href="#">КОНТАКТЫ</a></li>
+          <li data-translate="contacts" class="nav-item">
+            <a href="#">КОНТАКТЫ</a>
+          </li>
         </ul>
         <footer class="footer-info footer-descktop">
           <div class="social-links">
@@ -72,10 +84,12 @@
           </p>
         </footer>
         <div class="booking-button">
-          <a href="http://www.hiltoneasteurope.com">Забронировать</a>
+          <a data-translate="bookNow" href="http://www.hiltoneasteurope.com"
+            >Забронировать</a
+          >
         </div>
       </nav>
-      <div class="booking-button-mobile">
+      <div data-translate="bookNow" class="booking-button-mobile">
         <a href="http://www.hiltoneasteurope.com">Забронировать</a>
       </div>
 
@@ -87,7 +101,7 @@
           playsinline
           webkit-playsinline
           id="header-video"
-          poster="../src/images/cozy_rooms.jpg"
+          poster="../src/images/night_city.jpg"
         >
           <source src="../src/video/hello_site_video.mp4" type="video/mp4" />
           <source src="../src/video/hello_site_video.mp4" type="video/webm" />
@@ -106,15 +120,13 @@
               </div>
               <div class="time-weather">
                 <span id="volgograd-time" class="time">
-                  МЕСТНОЕ
-                  <br />
-                  ВРЕМЯ
+                  <span data-translate="localTime">МЕСТНОЕ ВРЕМЯ</span>
                   <span class="time-value"></span>
                 </span>
                 <span id="cityTemp" class="weather">
-                  ПОГОДА
-                  <br />
-                  ВОЛГОГРАД
+                  <span data-translate="weatherVolgograd"
+                    >ПОГОДА ВОЛГОГРАД</span
+                  >
                   <span class="weather-value"></span>
                 </span>
               </div>
@@ -122,17 +134,20 @@
 
             <div class="hero">
               <div class="hero-content">
-                <h1>
+                <h1 data-translate="welcome">
                   Добро пожаловать в отель <br />
                   Hampton Volgograd
                 </h1>
                 <span class="red-line"></span>
-                <p class="content-level-1">
-                  Hampton by Hilton Volgograd Profsoyuznaya - <br />это
-                  современный отель, который предоставляет <br />свои услуги
-                  путешественникам, ценящим <br />качество за разумные деньги.
+                <p class="content-level-1" data-translate="hotelDescription">
+                  Hampton by Hilton Volgograd Profsoyuznaya - это современный
+                  отель, который предоставляет свои услуги путешественникам,
+                  ценящим качество за разумные деньги.
                 </p>
-                <p class="content-level-2">
+                <p
+                  class="content-level-2"
+                  data-translate="exceedingExpectations"
+                >
                   Hampton by Hilton - Превосходя ожидания.
                 </p>
               </div>
@@ -146,7 +161,9 @@
       <div class="parent">
         <a href="#" class="div1">
           <img src="../src/images/cozy_rooms.jpg" alt="Уютные номера" />
-          <span class="image-text cozy_rooms">Уютные номера</span>
+          <span class="image-text cozy_rooms" data-translate="cozyRooms"
+            >Уютные номера</span
+          >
         </a>
         <a href="#" class="div2">
           <img
