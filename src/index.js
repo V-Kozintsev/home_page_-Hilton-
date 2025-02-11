@@ -89,12 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // При загрузке страницы проверяем, есть ли сохраненный язык в localStorage
   const savedLanguage = localStorage.getItem("selectedLanguage");
   if (savedLanguage) {
     changeLanguage(savedLanguage);
   } else {
-    // Если язык не сохранен, устанавливаем язык по умолчанию (например, русский)
     changeLanguage("ru");
   }
 });
@@ -107,29 +105,26 @@ function updateVolgogradTime() {
   const getVolgogradTime = getTimeInTimeZone("Europe/Volgograd");
   const timeValueElement = document.querySelector(
     "#volgograd-time .time-value",
-  ); // Находим элемент span с классом time-value
+  );
 
   if (timeValueElement) {
-    timeValueElement.innerText = getVolgogradTime; // Вставляем время внутрь span.time-value
+    timeValueElement.innerText = getVolgogradTime;
   } else {
     console.error(
       "Элемент с классом 'time-value' внутри '#volgograd-time' не найден.",
     );
   }
 
-  //Обновляем текст "МЕСТНОЕ ВРЕМЯ"
   const localTimeElement = document.querySelector("#volgograd-time .time");
   if (localTimeElement) {
     localTimeElement.dataset.translate = "localTime";
   }
 
-  //Обновляем текст "Волгоград" в погоде
   const volgogradWeatherElement = document.querySelector("#cityTemp .weather");
   if (volgogradWeatherElement) {
     volgogradWeatherElement.dataset.translate = "weather";
   }
 
-  //Обновляем текст "Погода" в погоде
   const weatherWordElement = document.querySelector("#cityTemp .weather");
   if (weatherWordElement) {
     weatherWordElement.dataset.translate = "weather";
@@ -154,7 +149,7 @@ async function getVolgogradWeather(latitude, longitude) {
 
     const data = await response.json();
     const temperatureCelsius = Math.round(data.current.temp_c);
-    const weatherText = `${temperatureCelsius}°C`; // Только температура
+    const weatherText = `${temperatureCelsius}°C`;
 
     const weatherValueElement = document.querySelector(
       "#cityTemp .weather-value",
@@ -163,14 +158,12 @@ async function getVolgogradWeather(latitude, longitude) {
       weatherValueElement.textContent = weatherText;
     }
 
-    //Обновляем текст "Волгоград" в погоде
     const volgogradWeatherElement =
       document.querySelector("#cityTemp .weather");
     if (volgogradWeatherElement) {
       volgogradWeatherElement.dataset.translate = "volgograd";
     }
 
-    //Обновляем текст "Погода" в погоде
     const weatherWordElement = document.querySelector("#cityTemp .weather");
     if (weatherWordElement) {
       weatherWordElement.dataset.translate = "weather";
@@ -188,10 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const hotelNav = document.querySelector(".hotel-nav");
 
-  //  Изначально закрываем меню
   hotelNav.classList.remove("open");
 
   menuToggle.addEventListener("click", () => {
     hotelNav.classList.toggle("open");
+    menuToggle.classList.toggle("open"); //  Добавляем/удаляем класс open к menuToggle
   });
 });
