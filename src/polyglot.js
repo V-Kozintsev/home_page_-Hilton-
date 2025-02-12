@@ -23,7 +23,6 @@ export function polyglot() {
         organizationPerformance: "Организация мероприятий",
         hotelGallery: "Галерея отеля",
         whatToVisit: "Что посетить в Волгограде",
-
         weather: "ПОГОДА",
         volgograd: "ВОЛГОГРАД",
         hotelDescription:
@@ -80,8 +79,7 @@ export function polyglot() {
     }
 
     langLinks.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
+      link.addEventListener("click", () => {
         const lang = link.dataset.lang;
         changeLanguage(lang);
       });

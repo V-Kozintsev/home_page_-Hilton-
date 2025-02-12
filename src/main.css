@@ -245,9 +245,11 @@ header {
   margin: 0;
 }
 
+.lang-link {
+  color: #333;
+}
 .nav-item {
   display: block;
-  color: #333;
   text-decoration: none;
   padding: 10px 0;
   font-weight: 500;
