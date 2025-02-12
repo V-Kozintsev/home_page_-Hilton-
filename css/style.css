@@ -617,6 +617,20 @@ main {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
+@media (max-width: 1920px) {
+  .div4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../a8f7208dee473e3feb3f.jpg) no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+}
+
 @media (max-width: 1366px) and (min-width: 760px) {
   .container {
     display: -webkit-box;
@@ -741,7 +755,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../a278b3f138ea7d6c22e7.jpg) no-repeat;
+    background: url(../a8f7208dee473e3feb3f.jpg) no-repeat;
     background-size: cover;
     z-index: 0;
   }
@@ -1195,6 +1209,38 @@ main {
     font-size: clamp(1.2rem, 2vw, 1.6em);
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  .parent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .div1 {
+    order: 1;
+  }
+
+  .div2 {
+    order: 5;
+  }
+
+  .div3 {
+    order: 2;
+  }
+
+  .div4 {
+    order: 3;
+  }
+
+  .div5 {
+    order: 4;
+  }
+  .div6 {
+    order: 6;
   }
 }
 @media (max-width: 480px) {
